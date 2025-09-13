@@ -3,5 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "ng-calendar-formatter": {
+      "projectType": "library",
+      "root": "projects/ng-calendar-formatter",
+      "sourceRoot": "projects/ng-calendar-formatter/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-calendar-formatter/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-calendar-formatter/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ng-calendar-formatter/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
