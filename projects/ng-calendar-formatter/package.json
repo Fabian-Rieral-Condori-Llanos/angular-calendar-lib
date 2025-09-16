@@ -1,0 +1,39 @@
+{
+  "name": "@fabian-rieral/angular-calendar-lib",
+  "version": "1.0.0",
+  "description": "Librería de Angular para formatear fechas y mostrar calendarios en múltiples sistemas de calendario (Gregoriano, Islámico, Persa, Hebreo, Chino)",
+  "keywords": [
+    "angular",
+    "calendar",
+    "date",
+    "formatting",
+    "hijri",
+    "islamic",
+    "persian",
+    "jalaali",
+    "hebrew",
+    "chinese",
+    "gregorian",
+    "moment",
+    "internationalization"
+  ],
+  "author": "Fabian Rieral Condori Llanos <condorillanosfabianrieral@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Fabian-Rieral-Condori-Llanos/angular-calendar-lib#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fabian-Rieral-Condori-Llanos/angular-calendar-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fabian-Rieral-Condori-Llanos/angular-calendar-lib/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/forms": "^20.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

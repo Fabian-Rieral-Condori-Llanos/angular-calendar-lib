@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+# Only exists if Bazel was run
 /bazel-out
 
 # Node
@@ -40,3 +41,66 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Angular
+.angular/
+
+# Testing
+/coverage
+
+# E2E
+/e2e/*.js
+/e2e/*.map
+
+# Package files
+*.tgz
+*.tar.gz
+
+# Log files
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Temporary files
+/test-local-package.js
+angular.json.backup

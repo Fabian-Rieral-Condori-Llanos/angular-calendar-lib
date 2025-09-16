@@ -3,5 +3,88 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "ng-calendar-formatter": {
+      "projectType": "library",
+      "root": "projects/ng-calendar-formatter",
+      "sourceRoot": "projects/ng-calendar-formatter/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/ng-calendar-formatter/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ng-calendar-formatter/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "example-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/example-app",
+      "sourceRoot": "projects/example-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/example-app",
+            "index": "projects/example-app/src/index.html",
+            "browser": "projects/example-app/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/example-app/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/example-app/public",
+                "output": "/"
+              }
+            ],
+            "styles": ["projects/example-app/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "example-app:build:production"
+            },
+            "development": {
+              "buildTarget": "example-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
